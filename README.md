@@ -93,3 +93,21 @@ int main() {
     return 0;
 }
 
+==========================================
+
+The attached additional Python and MATLAB codes contain functions for calculating the MTF of simplified figures.
+
+The code starts by loading an image from a specified file path and returning the image as grayscale data.
+
+The LoadImageAsArray function converts it into a numpy array, with pixel values ranging between 0.0 and 1.0.
+The ImageToArray function converts a PIL image to a numpy array. The ArrayToImage function converts a numpy array back to a PIL image. The code adjusts the orientation of an image for analysis purposes.
+
+The GetEdgeSpreadFunctionCrop function calculates the Edge Spread Function (ESF) for a slanted edge target. It detects the edge in the image, calculates the ESF, and crops it around the center of the transition. The SimplifyEdgeSpreadFunction function removes duplicate distance occurrences in the ESF to simplify the data.
+
+The GetLineSpreadFunction function calculates the Line Spread Function (LSF) from the ESF by taking the derivative.
+The GetMTF function calculates MTF from the LSF by performing the Fourier transform and normalizing the values.
+
+The CalculateMtf function combines these steps to calculate the MTF of an image array, including the necessary preprocessing steps.
+
+Overall, these functions provide a set of tools for analyzing simple figures and calculating their MTF as a measure of image quality. The next step involves more complicated tests.
+I still need to develop a control loop or automation routine to iterate through the focus settings, acquire images, calculate the MTF, and adjust the focus until the best focus resolution is achieved. This could be done in a feedback loop, continuously refining the focus based on MTF measurements.
