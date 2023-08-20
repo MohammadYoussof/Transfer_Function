@@ -24,7 +24,7 @@ I provide here an outline of how to approach this conversion. A full conversion 
 Here is the general process for converting this MATLAB code into C++:
 
 1-	Data types: 
-MATLAB uses dynamic typing, while C++ is a statically typed language. I need to specify data types for all your variables. For example, the MATLAB variable lambda () would be defined in C++ as double .
+MATLAB uses dynamic typing, while C++ is a statically typed language. I need to specify data types for all your variables. For example, the MATLAB variable lambda (λ) would be defined in C++ as double .
 2-	Arrays and matrices: 
 MATLAB has built-in support for matrix operations, but C++ does not. I use libraries like Eigen, Armadillo, or raw arrays with manual implementation of matrix operations.
 3-	Functions: 
